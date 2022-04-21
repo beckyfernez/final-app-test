@@ -9,3 +9,8 @@ requests
 
 # data processing:
 pandas
+
+# data scraping from google sheets:
+google_spreadsheet
+
+google-auth-oauthlib
