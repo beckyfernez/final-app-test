@@ -50,8 +50,8 @@ for x in range (0, len(data2)):
 #print(type(overall_list1))
 
 overall_score1 = sum(overall_list1)/len(overall_list1)
-overall_score2 = sum(overall_list2)/len(overall_list2)
-print(overall_score1, overall_score2)
+#overall_score2 = sum(overall_list2)/len(overall_list2)
+print(overall_score1)
 
 
 #print(data2[0])
