@@ -42,9 +42,9 @@ for x in range (0, len(data2)):
     if data2[x]["location_id"]==1:
         average1 = (data2[x]["taste_score"]+data2[x]["health_score"]+data2[x]["service_score"]+data2[x]["portion_score"])/4
         overall_list1.append(average1)
-    elif data2[x]["location_id"]==2:
-        average2 = (data2[x]["taste_score"]+data2[x]["health_score"]+data2[x]["service_score"]+data2[x]["portion_score"])/4
-        overall_list2.append(average2)
+    #elif data2[x]["location_id"]==2:
+    #    average2 = (data2[x]["taste_score"]+data2[x]["health_score"]+data2[x]["service_score"]+data2[x]["portion_score"])/4
+    #    overall_list2.append(average2)
 
 #print(overall_list1)
 #print(type(overall_list1))
