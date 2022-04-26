@@ -16,12 +16,10 @@ client2 = gspread.authorize(creds2)
 
 workbook2 = client2.open("Georgetown Dining Reviews Data").sheet1
 
-#creating a list
+# List of dictionaries (all values corresponsing to the csv file)
 data2 = workbook2.get_all_records()
 
-#pprint(data2)
-#print(len(data2))
-
+# List of review averages for each location
 overall_list1=[]
 overall_list2=[]
 overall_list3=[]
@@ -37,21 +35,26 @@ overall_list12=[]
 overall_list13=[]
 overall_list14=[]
 
-# we can maybe call a function to perform the average of a single row
-for x in range (0, len(data2)):
-    if data2[x]["location_id"]==1:
-        average1 = (data2[x]["taste_score"]+data2[x]["health_score"]+data2[x]["service_score"]+data2[x]["portion_score"])/4
-        overall_list1.append(average1)
-    #elif data2[x]["location_id"]==2:
-    #    average2 = (data2[x]["taste_score"]+data2[x]["health_score"]+data2[x]["service_score"]+data2[x]["portion_score"])/4
-    #    overall_list2.append(average2)
+# we can maybe call a function to perform the average of a single row (refactoring) (maybe also create a list of list)
+for review_number in range (0, len(data2)):
+    if data2[review_number]["location_id"]==1:
+        average = (data2[review_number]["taste_score"]+data2[review_number]["health_score"]+data2[review_number]["service_score"]+data2[review_number]["portion_score"])/4
+        overall_list1.append(average)
+    elif data2[review_number]["location_id"]==2:
+        average = (data2[review_number]["taste_score"]+data2[review_number]["health_score"]+data2[review_number]["service_score"]+data2[review_number]["portion_score"])/4
+        overall_list2.append(average)
 
-#print(overall_list1)
-#print(type(overall_list1))
+print(overall_list1)
+print(overall_list2)
 
+# call function here or use a for loop
+#for location_id in range (0, 14):
+
+# calculate averages of for each location review avg.
 overall_score1 = sum(overall_list1)/len(overall_list1)
-#overall_score2 = sum(overall_list2)/len(overall_list2)
+overall_score2 = sum(overall_list2)/len(overall_list2)
 print("overall average score for location 1:", overall_score1)
+print("overall average score for location 2:", overall_score2)
 
 
 #print(data2[0])
