@@ -12,14 +12,14 @@ client2 = gspread.authorize(creds2)
 
 sheet = client2.open("Georgetown Dining Reviews Data").sheet1
 
-data2 = sheet.get_all_records()
+reviews = sheet.get_all_records()
 
-pprint(data2)
+pprint(reviews)
 
 # storing dictionary values pulled from users in a list
 #hard coded dictionary CHANGE LATER
-sample_dict = {"location_id":"5", "taste_score":"2", "health_score":"2", "service_score":"2", "portion_score":"2", }
-new_reviews = list(sample_dict.values())
+form_data = {"location_id":"5", "taste_score":"2", "health_score":"2", "service_score":"2", "portion_score":"2", }
+new_reviews = list(form_data.values())
 integer_reviews = list(map(int, new_reviews))
 #print(integer_reviews)
 
